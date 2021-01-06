@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "webpack serve --mode=development --open",
-    "build:dev": "webpack --mode=development --progress --profile --colors",
-    "build": "webpack --mode=production --colors"
+    "build:dev": "webpack --mode=development --progress --profile",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
