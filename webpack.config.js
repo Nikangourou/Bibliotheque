@@ -82,6 +82,9 @@ function generateBaseConfig() {
     // liste des extension gérées
     resolve: {
       extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'],
+      alias: {
+        'react-dom': '@hot-loader/react-dom',
+      },
     },
   };
 }
