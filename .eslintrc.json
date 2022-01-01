@@ -1,6 +1,6 @@
 {
-  "plugins": ["babel", "jest"],
-  "parser": "babel-eslint",
+  "plugins": ["@babel", "jest"],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 11,
     "sourceType": "module",
@@ -8,29 +8,23 @@
       "jsx": true
     }
   },
+  "overrides": [{
+    "files": ["*.jsx", "*.js"]
+  }],
   "env": {
     "browser": true,
     "jest/globals": true
   },
   "globals": {
+    "APP_ENV": "readonly",
     "fetchMock": "readonly"
   },
-  "extends": ["airbnb", "plugin:jest/recommended", "plugin:jest/style"],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:jest/recommended", "plugin:jest/style"],
   "rules": {
     "no-console": ["error", {
       "allow": ["warn", "error"]
     }],
     "no-underscore-dangle": "off",
-    "no-restricted-syntax": ["error", {
-      "selector": "ForInStatement",
-      "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want."
-    }, {
-      "selector": "LabeledStatement",
-      "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
-    }, {
-      "selector": "WithStatement",
-      "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
-    }],
     "jsx-a11y/label-has-associated-control": ["error", {
       "assert": "either",
       "depth": 4

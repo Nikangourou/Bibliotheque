@@ -499,4 +499,4 @@ $RECYCLE.BIN/
 *.snap
 
 # Custom: public dir
-public/
+build/
